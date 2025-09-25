@@ -5,7 +5,7 @@ export const FetchingHelloAPI = async () => {
     method: 'POST',
     headers: { 'content-type': 'application/json' },
     body: JSON.stringify({ name: 'Alireza Akbari' }),
-    next: revalidateTag('hello') ,
+    
 
   })
 }
