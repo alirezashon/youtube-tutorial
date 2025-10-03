@@ -1,35 +1,25 @@
-const RootPage = () => {
-  
-  let myName:Record<string,(string|number)[]> 
-    myName = {key:[23]}
+import { ProductInterface } from '@/interfaces'
+import { FetchProducts } from '@/services/hello'
+import { useEffect, useState } from 'react'
 
-  const test = () => {
-    alert('test')
-  }
-  const testValue = ' default '
+const index = () => {
+  const [products, setProducts] = useState<ProductInterface[]>([])
+
+  useEffect(() => {
+    const fetchMyData = async () => {
+      await FetchProducts().then((result) => {
+        if (result as ProductInterface[]) setProducts(result)
+      })
+    }
+    fetchMyData()
+  }, [])
   return (
     <div>
-      <form onSubmit={test}>
-        <label htmlFor='radioInput' className='w-56 h-[100px] bg-red-500'>
-          تست
-        </label>
-        <input
-          placeholder='اینجا تایپ کنید'
-          id='radioInput'
-          // type='file'
-          // src='/file.svg'
-          // onChange={(event) => alert(event.target.value)}
-          style={{ border: '1px solid gray' }}
-        />
-        <input
-          // value={'submit'}
-          // onChange={(event) => alert(event.target.value)}
-          style={{ border: '1px solid gray' }}
-        />
-        {/* <button>submit</button> */}
-      </form>
+      {products?.map((product) => (
+        <div className=''>{product.title}</div>
+      ))}
     </div>
   )
 }
 
-export default RootPage
+export default index
