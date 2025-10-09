@@ -1,13 +1,13 @@
 import PropsFC from '@/components/PropsComponent'
-import { FetchingHelloAPI } from '@/services/hello'
+import { fetchingHelloAPI } from '@/services/hello'
 import { useEffect } from 'react'
 
-const test = () => {
+const Test = () => {
   const myData = Array.from({ length: 50 }, () => {
     return { key: 'number1', value: 'test1' }
   })
   useEffect(() => {
-    FetchingHelloAPI()
+    fetchingHelloAPI()
   }, [])
 
   return (
@@ -45,4 +45,4 @@ const test = () => {
   )
 }
 
-export default test
+export default Test

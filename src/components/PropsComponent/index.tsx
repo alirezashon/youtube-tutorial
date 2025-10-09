@@ -9,8 +9,9 @@ const PropsComponent: React.JSXElementConstructor<MyFirstInterface> = ({
   age,
 }) => {
   useEffect(() => {
-    if (name.length > 3) alert(isNumberValid({number:age}))
-  }, [])
+    if (name.length > 3) alert(isNumberValid({ number: age }))
+  }, [name, age])
+
   return (
     <div className='border-b-2 border-blue-300 mb-[100px] pb-20 '>
       {name + lastName}

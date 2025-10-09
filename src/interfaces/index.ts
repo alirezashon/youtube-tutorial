@@ -21,14 +21,14 @@ export interface ProductInterface {
   brand: string
   sku: string
   weight: number
-  dimensions: any
+  dimensions: string
   warrantyInformation: string
   shippingInformation: string
   availabilityStatus: string
   reviews: string[]
   returnPolicy: string
   minimumOrderQuantity: number
-  meta: any
+  meta: string
   images: string[]
   thumbnail: string
 }
