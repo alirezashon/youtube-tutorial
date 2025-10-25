@@ -1,5 +1,5 @@
 import PropsFC from '@/components/PropsComponent'
-import { fetchingHelloAPI } from '@/services/hello'
+import { fetchingHelloAPI } from '@/services/product'
 import { useEffect } from 'react'
 
 const Test = () => {

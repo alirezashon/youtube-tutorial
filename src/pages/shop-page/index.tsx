@@ -1,8 +1,9 @@
+import ProductGrid from '@/components/Store'
 
 const index = () => {
   return (
     <div>
-main      
+      <ProductGrid />
     </div>
   )
 }
